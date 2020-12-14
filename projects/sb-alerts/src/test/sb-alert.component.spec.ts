@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SbAlertComponent } from '../public-api';
 
-import { SbAlertsComponent } from './sb-alerts.component';
 
-describe('SbAlertsComponent', () => {
-  let component: SbAlertsComponent;
-  let fixture: ComponentFixture<SbAlertsComponent>;
+describe('SbAlertComponent', () => {
+  let component: SbAlertComponent;
+  let fixture: ComponentFixture<SbAlertComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SbAlertsComponent ]
+      declarations: [ SbAlertComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SbAlertsComponent);
+    fixture = TestBed.createComponent(SbAlertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

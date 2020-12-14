@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { SbAlertsComponent } from './sb-alerts.component';
+import { CommonModule } from '@angular/common';
+import { SbAlertComponent } from './sb-alert.component';
 
 
 
 @NgModule({
-  declarations: [SbAlertsComponent],
+  declarations: [SbAlertComponent],
   imports: [
+    CommonModule
   ],
-  exports: [SbAlertsComponent]
+  exports: [SbAlertComponent]
 })
 export class SbAlertsModule { }
