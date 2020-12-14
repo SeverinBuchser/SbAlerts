@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ISbAlert, ISbAlertOptions } from './sb-alert.interface';
-import { SbAlertNotClosedError } from './sb-alerts.error';
+import { SbAlertNotClosedError, SbAlertNotFoundError } from './sb-alerts.error';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,7 @@ export class SbAlertsService {
   };
   public openAlert(name: string, text: string, data: any): Promise<void> {
     let foundAlert: ISbAlert = this.alerts.find((alert: ISbAlert) => alert.name === name) as ISbAlert;
+    if (!foundAlert) return Promise.reject(new SbAlertNotFoundError());
     return foundAlert.open(text, data)
     .then(() => this.sleep(foundAlert.openAnimationTime))
     .then(() => this.sleep(foundAlert.openTime))

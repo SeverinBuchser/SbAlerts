@@ -9,12 +9,6 @@ import { SbAlertsService } from './sb-alerts.service';
 })
 export class SbAlertComponent {
 
-  constructor(
-    private alertService: SbAlertsService
-  ) {
-    this.alertService.addAlert(this)
-  }
-
   public name = 'root';
   public openTime: number = 2000;
   private isOpen: boolean = false;
@@ -26,6 +20,12 @@ export class SbAlertComponent {
 
   @Input()
   public theme: string = 'bright';
+
+
+  @Input()
+  set alertService(alertService: SbAlertsService) {
+    alertService.addAlert(this)
+  }
 
   open(text: string, context: string): Promise<void> {
     if (this.isOpen) return Promise.reject(new SbAlertNotClosedError());
