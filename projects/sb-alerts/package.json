@@ -2,11 +2,17 @@
   "name": "sb-alerts",
   "version": "0.0.3",
   "description": "This is an alerts module for angular.",
+  "author": "Severin Buchser",
   "peerDependencies": {
     "@angular/common": "^11.0.4",
     "@angular/core": "^11.0.4"
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeverinBuchser/SbAlerts.git"
+  },
+  "license": "ISC"
 }
